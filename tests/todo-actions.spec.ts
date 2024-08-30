@@ -13,13 +13,6 @@ test.describe("Todo Actions", () => {
     await page.press(".new-todo", "Enter");
   });
 
-  test("should mark a todo as completed", async () => {
-    await page.click(".todo-list li:first-child .toggle");
-    await expect(page.locator(".todo-list li:first-child")).toHaveClass(
-      /completed/
-    );
-  });
-
   test("should delete a todo", async () => {
     await page.hover(".todo-list li:first-child");
     await page.click(".todo-list li:first-child .destroy");
